@@ -1,0 +1,233 @@
+/* Reset default browser margins */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Center the app and use full width */
+.app-container {
+  height: 100vh; /* Full viewport height */
+  background-color: #f3f4f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  box-sizing: border-box;
+  width: 100vw; /* Ensure full viewport width */
+}
+
+/* Card takes more screen width */
+.todo-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  width: 90%; /* Use most of the screen width */
+  max-width: 800px; /* Increased for larger screens */
+}
+
+/* Heading */
+.todo-card h1 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #1f2937;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* Input and button container */
+.input-group {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.input-group button {
+  padding: 12px 20px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.input-group button:hover {
+  background-color: #2563eb;
+}
+
+/* Task list */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-item {
+  display: flex;
+  flex-direction: row; /* Keep text and buttons in a row */
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.task-item.completed {
+  text-decoration: line-through;
+  color: #6b7280;
+}
+
+.task-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  width: 100%; /* Ensure full width for proper alignment */
+}
+
+.button-group {
+  display: flex;
+  gap: 8px; /* Space between Edit and Delete buttons */
+  margin-left: auto; /* Push buttons to the rightmost side */
+}
+
+/* Edit mode */
+.task-item .edit-group {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  width: 100%;
+}
+
+.task-item input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.task-item input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Buttons */
+.task-item button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.task-item button.edit {
+  background-color: #f59e0b;
+  color: white;
+}
+
+.task-item button.edit:hover {
+  background-color: #d97706;
+}
+
+.task-item button.delete {
+  background-color: #ef4444;
+  color: white;
+}
+
+.task-item button.delete:hover {
+  background-color: #dc2626;
+}
+
+.task-item button.save {
+  background-color: #10b981;
+  color: white;
+}
+
+.task-item button.save:hover {
+  background-color: #059669;
+}
+
+.task-item button.cancel {
+  background-color: #6b7280;
+  color: white;
+}
+
+.task-item button.cancel:hover {
+  background-color: #4b5563;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .todo-card {
+    width: 95%;
+    max-width: 600px;
+    padding: 20px;
+  }
+
+  .input-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .input-group input,
+  .input-group button {
+    width: 100%;
+  }
+
+  .task-item .edit-group {
+    flex-direction: column; /* Stack edit inputs/buttons on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .todo-card {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .todo-card h1 {
+    font-size: 1.5rem;
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .task-content {
+    flex-direction: column; /* Stack text and buttons on mobile */
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .button-group {
+    margin-left: 0; /* Reset for stacked layout */
+    width: 100%; /* Ensure buttons take full width when stacked */
+  }
+
+  .task-item button {
+    width: 100%;
+  }
+}
